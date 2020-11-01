@@ -1,0 +1,36 @@
+name: $(Version.Major).$(Version.Minor).$(Version.Patch).$(Version.Build)    
+
+trigger:
+- develop
+
+pool:
+  vmImage: 'windows-latest'
+
+variables:
+  buildConfiguration: 'Release'
+  Version.Major: 1
+  Version.Minor: 1
+  Version.Build: $[counter(variables['Version.Patch'], 1)]
+
+steps:
+
+- task: DotNetCoreCLI@2
+  inputs:
+    command: 'test'
+    arguments: '--configuration $(buildConfiguration)'
+    projects: src/*.sln
+  displayName: 'Run dotnet test'
+
+- task: DotNetCoreCLI@2
+  inputs:
+    command: 'custom'
+    custom: pack
+    arguments: '--configuration $(buildConfiguration) -p:PackageVersion=$(Version.Major).$(Version.Minor).$(Version.Patch).$(Version.Build) --output $(Build.ArtifactStagingDirectory)'
+    projects: src/*.sln
+  displayName: 'Run dotnet pack'
+
+- task: PublishBuildArtifacts@1
+  inputs:
+    pathToPublish: '$(Build.ArtifactStagingDirectory)' 
+    artifactName: 'packages' 
+  displayName: 'Publish NuGet packages as artifacts (packages)'

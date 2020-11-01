@@ -1,0 +1,41 @@
+name: PR-$(Rev:r)
+
+trigger: none
+
+pool:
+  vmImage: 'windows-latest'
+
+variables:
+  buildConfiguration: 'Release'
+
+steps:
+- checkout: self
+  persistCredentials: true
+
+- task: DotNetCoreCLI@2
+  inputs:
+    command: 'restore'
+    projects: src/*.sln
+  displayName: 'Run dotnet restore'
+
+- task: DotNetCoreCLI@2
+  inputs:
+    command: 'build'
+    arguments: '--configuration $(buildConfiguration)'
+    projects: src/*.sln
+  displayName: 'Run dotnet build $(buildConfiguration)'
+
+- task: DotNetCoreCLI@2
+  inputs:
+    command: 'test'
+    arguments: '--configuration $(buildConfiguration)'
+    projects: src/*.sln
+  displayName: 'Run dotnet test'
+
+- task: variableupdater@1
+  inputs:
+    VariableGroupId: '4'
+    VariableName: 'Version.Patch'
+    NewValue: '$[counter(variables[''Version.Minor''], 1)]'
+  condition: and(succeeded(), eq(variables['Build.SourceBranch'], 'refs/heads/hotfix/*'))
+  displayName: 'Update patch version (if hotfix)'

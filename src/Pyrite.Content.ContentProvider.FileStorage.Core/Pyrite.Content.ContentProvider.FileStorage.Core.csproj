@@ -1,0 +1,13 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+    <AssemblyName>Pyrite.Content.ContentProvider.FileStorage.Core</AssemblyName>
+    <RootNamespace>Pyrite.Content.ContentProvider.FileStorage.Core</RootNamespace>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Pyrite.Content.Core.Abstractions" Version="1.1.0.140" />
+  </ItemGroup>
+
+</Project>
