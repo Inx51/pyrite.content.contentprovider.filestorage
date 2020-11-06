@@ -13,6 +13,13 @@ variables:
   Version.Build: $[counter(variables['Version.Patch'], 1)]
 
 steps:
+- task: DotNetCoreCLI@2
+  inputs:
+    command: 'restore'
+    projects: 'src/*.sln'
+    feedsToUse: 'config'
+    nugetConfigPath: 'src/NuGet.config'
+  displayName: 'Run dotnet restore'
 
 - task: DotNetCoreCLI@2
   inputs:
