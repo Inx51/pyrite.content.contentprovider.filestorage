@@ -15,7 +15,9 @@ steps:
 - task: DotNetCoreCLI@2
   inputs:
     command: 'restore'
-    projects: src/*.sln
+    projects: 'src/*.sln'
+    feedsToUse: 'config'
+    nugetConfigPath: 'src/NuGet.config'
   displayName: 'Run dotnet restore'
 
 - task: DotNetCoreCLI@2
@@ -34,7 +36,7 @@ steps:
 
 - task: variableupdater@1
   inputs:
-    VariableGroupId: '4'
+    VariableGroupId: '7'
     VariableName: 'Version.Patch'
     NewValue: '$[counter(variables[''Version.Minor''], 1)]'
   condition: and(succeeded(), eq(variables['Build.SourceBranch'], 'refs/heads/hotfix/*'))
