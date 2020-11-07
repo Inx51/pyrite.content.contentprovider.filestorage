@@ -1,8 +1,8 @@
-﻿using Pyrite.Content.ContentProvider.FileStorage.Core.Interfaces.Services;
+﻿using Pyrite.Content.ContentProvider.FileStorage.Interfaces.Services;
 using System.IO;
 using System.Threading.Tasks;
 
-namespace Pyrite.Content.ContentProvider.FileStorage.Core.Services
+namespace Pyrite.Content.ContentProvider.FileStorage.Services
 {
     public class FileService : IFileService
     {

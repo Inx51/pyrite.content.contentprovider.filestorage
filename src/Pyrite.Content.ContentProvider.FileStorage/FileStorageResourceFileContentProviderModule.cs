@@ -1,10 +1,10 @@
 ﻿using Microsoft.Extensions.DependencyInjection;
 using Pyrite.Content.Core.Abstractions.Interfaces;
 using Pyrite.Content.Core.Abstractions.Interfaces.Services;
-using Pyrite.Content.ContentProvider.FileStorage.Core.Interfaces.Services;
-using Pyrite.Content.ContentProvider.FileStorage.Core.Services;
+using Pyrite.Content.ContentProvider.FileStorage.Interfaces.Services;
+using Pyrite.Content.ContentProvider.FileStorage.Services;
 
-namespace Pyrite.Content.ContentProvider.FileStorage.Core
+namespace Pyrite.Content.ContentProvider.FileStorage
 {
     public class FileStorageResourceFileContentProviderModule : IPyriteResourceContentProviderModule
     {

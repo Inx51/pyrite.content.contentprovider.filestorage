@@ -1,6 +1,6 @@
 ﻿using System.Threading.Tasks;
 
-namespace Pyrite.Content.ContentProvider.FileStorage.Core.Interfaces.Services
+namespace Pyrite.Content.ContentProvider.FileStorage.Interfaces.Services
 {
     public interface IFileService
     {
