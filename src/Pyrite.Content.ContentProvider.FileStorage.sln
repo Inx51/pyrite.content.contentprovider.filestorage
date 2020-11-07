@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.30114.105
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Pyrite.Content.ContentProvider.FileStorage.Core", "Pyrite.Content.ContentProvider.FileStorage.Core\Pyrite.Content.ContentProvider.FileStorage.Core.csproj", "{732C9B72-8873-401A-B765-2ECFD84E45F2}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Pyrite.Content.ContentProvider.FileStorage", "Pyrite.Content.ContentProvider.FileStorage\Pyrite.Content.ContentProvider.FileStorage.csproj", "{732C9B72-8873-401A-B765-2ECFD84E45F2}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

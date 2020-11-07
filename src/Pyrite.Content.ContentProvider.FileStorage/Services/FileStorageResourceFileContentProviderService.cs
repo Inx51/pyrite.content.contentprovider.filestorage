@@ -1,12 +1,12 @@
 ﻿using Pyrite.Content.Core.Abstractions.Interfaces;
 using Pyrite.Content.Core.Abstractions.Interfaces.Services;
-using Pyrite.Content.ContentProvider.FileStorage.Core.Interfaces.Services;
+using Pyrite.Content.ContentProvider.FileStorage.Interfaces.Services;
 using System;
 using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace Pyrite.Content.ContentProvider.FileStorage.Core.Services
+namespace Pyrite.Content.ContentProvider.FileStorage.Services
 {
     public class FileStorageResourceFileContentProviderService : IResourceContentProviderService
     {

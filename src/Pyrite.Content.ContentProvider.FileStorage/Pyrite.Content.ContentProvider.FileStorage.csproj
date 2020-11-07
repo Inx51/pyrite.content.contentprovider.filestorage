@@ -2,8 +2,8 @@
 
   <PropertyGroup>
     <TargetFramework>netcoreapp3.1</TargetFramework>
-    <AssemblyName>Pyrite.Content.ContentProvider.FileStorage.Core</AssemblyName>
-    <RootNamespace>Pyrite.Content.ContentProvider.FileStorage.Core</RootNamespace>
+    <AssemblyName>Pyrite.Content.ContentProvider.FileStorage</AssemblyName>
+    <RootNamespace>Pyrite.Content.ContentProvider.FileStorage</RootNamespace>
   </PropertyGroup>
 
   <ItemGroup>
